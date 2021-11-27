@@ -1,0 +1,28 @@
+defmodule ExGame do
+  def guess do
+    random_cpu = Enum.random(0..2)
+    user_guess = String.split(IO.gets("Enter r for rock, p for paper, or s for scissors: "), "\n", trim: true)
+    
+    game(random_cpu, guess)
+
+  end
+
+  defp game(0, ["p"]) do
+      IO.puts("CPU has called  rock")
+  end
+  defp game(0, ["s"]) do
+      IO.puts("CPU has called  rock")
+  end
+  defp game(1, "r") do
+      IO.puts("CPU has called  paper")
+  end
+  defp game(1, "s") do
+      IO.puts("CPU has called  rock")
+  end
+  defp game(2, "r") do
+      IO.puts("CPU has called  scissors")
+  end
+  defp game(2, "p") do
+      IO.puts("CPU has called  scissors")
+  end
+end
